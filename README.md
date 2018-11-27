@@ -5,8 +5,8 @@ Source code of [guillaumebriday.fr](https://guillaumebriday.fr) built with [Gats
 ## Running in development
 
 ```bash
-$ npm install
-$ npm run develop
+$ yarn
+$ yarn develop
 ```
 
 ## Contributing
