@@ -1,9 +1,50 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+  faRss,
+  faSearch,
+  faUser,
+  faCalendar,
+  faComments,
+  faClock,
+  faChevronLeft,
+  faChevronRight,
+  faArrowLeft,
+  faArrowRight,
+  faTag,
+} from '@fortawesome/free-solid-svg-icons'
+import {
+  faGithub,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+  faAmazon,
+  faPaypal,
+} from '@fortawesome/free-brands-svg-icons'
 
-// You can delete this file if you're not using it
+import mediumZoom from 'medium-zoom'
+import './src/styles/tailwind.scss'
+import './src/styles/index.scss'
 
-import "./src/styles/index.scss"
+library.add(
+  faRss,
+  faSearch,
+  faUser,
+  faCalendar,
+  faComments,
+  faClock,
+  faChevronLeft,
+  faChevronRight,
+  faArrowLeft,
+  faArrowRight,
+  faTag,
+  faGithub,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+  faAmazon,
+  faPaypal
+)
+
+export const onRouteUpdate = () => {
+  mediumZoom('.post-content img')
+}

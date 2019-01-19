@@ -1,4 +1,14 @@
-// Tailwind
-@tailwind preflight;
-@tailwind components;
-@tailwind utilities;
+@import "vendors/prism-onedark";
+
+@import "components/base";
+@import "components/post";
+@import "components/nav";
+@import "components/form";
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0s !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
