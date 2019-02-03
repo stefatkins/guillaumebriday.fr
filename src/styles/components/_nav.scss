@@ -2,7 +2,7 @@
   &:after {
     @apply .absolute .bg-indigo .w-0 .h-px .pin-l .opacity-0;
     content: '';
-    transition: 0.2s width;
+    transition: 350ms width;
     bottom: -.2rem;
   }
 
@@ -18,7 +18,7 @@
   &:after {
     @apply .absolute .bg-white .w-0 .h-px .pin-l .opacity-0;
     content: '';
-    transition: 0.2s width;
+    transition: 350ms width;
     bottom: -.2rem;
   }
 
