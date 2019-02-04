@@ -1,6 +1,11 @@
 import React from 'react'
 import { StaticQuery, Link, graphql } from 'gatsby'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { InstantSearch, Index, Configure } from 'react-instantsearch-dom'
+import algoliasearch from "algoliasearch"
+import AutoComplete from './AutoComplete'
+
+const searchClient = algoliasearch('8MB3KSYZEQ', '7fc62cf15955fb0a464f0c2a7ec8bb1e')
 
 export default ({ isBlog }) => (
   <StaticQuery
@@ -44,8 +49,13 @@ export default ({ isBlog }) => (
                 </Link>
 
                 <div className="inline border border-indigo rounded-full py-2 px-3 leading-tight">
-                  <input className="appearance-none text-indigo-dark focus:outline-none focus:outline-none" type="text" placeholder="Rechercher" />
-                  <FontAwesomeIcon icon="search" className="text-indigo" />
+                  <InstantSearch indexName="blog" searchClient={searchClient}>
+                    <Index indexName="blog">
+                      <Configure hitsPerPage={4} />
+                      <AutoComplete />
+                    </Index>
+                    <FontAwesomeIcon icon="search" className="text-indigo" />
+                  </InstantSearch>
                 </div>
               </div>
             </div>

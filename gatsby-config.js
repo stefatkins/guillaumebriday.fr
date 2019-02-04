@@ -1,4 +1,41 @@
 const tailwindcss = require('tailwindcss')
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+// gatsby-config.js
+const myQuery = `{
+  allMarkdownRemark(sort: {fields: [fields___date], order: DESC}, filter: {frontmatter: {layout: {eq: "post"}}}) {
+    edges {
+      node {
+        objectID: id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+        }
+        internal {
+          type
+          contentDigest
+          owner
+        }
+      }
+    }
+  }
+}
+`
+
+const queries = [
+  {
+    query: myQuery,
+    transformer: ({ data }) => data.allMarkdownRemark.edges.map(({ node }) => node), // optional
+    indexName: 'blog',
+    settings: {
+      // optional, any index settings
+    },
+  },
+]
 
 module.exports = {
   siteMetadata: {
@@ -7,6 +44,16 @@ module.exports = {
     siteUrl: `https://guillaumebriday.fr`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        queries,
+        chunkSize: 10000,
+      },
+    },
     'gatsby-transformer-yaml',
     {
       resolve: `gatsby-source-filesystem`,
