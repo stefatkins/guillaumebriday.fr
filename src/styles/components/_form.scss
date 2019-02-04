@@ -8,3 +8,34 @@
 .text-input {
   @apply .shadow .appearance-none .border .rounded .w-full .py-2 .px-3 .text-grey-darker;
 }
+
+.react-autosuggest__suggestions-container {
+  @apply .hidden;
+}
+
+.react-autosuggest__container--open .react-autosuggest__suggestions-container {
+  @apply .block .rounded-lg .border .bg-white .absolute .overflow-hidden;
+  top: 40px;
+  z-index: 2;
+}
+
+.react-autosuggest__container {
+  @apply .relative;
+}
+
+.react-autosuggest__input {
+  @apply .appearance-none .py-1 .px-2 .text-grey-darker;
+}
+
+.react-autosuggest__suggestions-list {
+  @apply .list-reset;
+}
+
+.react-autosuggest__suggestion a {
+  @apply .block .px-4 .py-3 .bg-white;
+  width: 500px;
+}
+
+.react-autosuggest__suggestion:not(:last-child) {
+  @apply .border-b;
+}

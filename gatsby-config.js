@@ -29,11 +29,9 @@ const myQuery = `{
 const queries = [
   {
     query: myQuery,
-    transformer: ({ data }) => data.allMarkdownRemark.edges.map(({ node }) => node), // optional
+    transformer: ({ data }) =>
+      data.allMarkdownRemark.edges.map(({ node }) => node),
     indexName: 'blog',
-    settings: {
-      // optional, any index settings
-    },
   },
 ]
 
@@ -49,7 +47,7 @@ module.exports = {
       options: {
         appId: process.env.ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        indexName: process.env.ALGOLIA_INDEX_NAME,
         queries,
         chunkSize: 10000,
       },
@@ -138,19 +136,20 @@ module.exports = {
             }
           }
         `,
-        feeds: [{
-          serialize: ({ query: { site, allMarkdownRemark } }) => {
-            return allMarkdownRemark.edges.map(edge => {
-              return Object.assign({}, edge.node.frontmatter, {
-                description: edge.node.excerpt,
-                date: edge.node.fields.date,
-                url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                custom_elements: [{ "content:encoded": edge.node.html }],
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.fields.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                })
               })
-            })
-          },
-          query: `
+            },
+            query: `
             {
               allMarkdownRemark(
                 limit: 1000,
@@ -174,9 +173,10 @@ module.exports = {
               }
             }
           `,
-          output: "/feed.xml",
-        }]
-      }
+            output: '/feed.xml',
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-layout`,

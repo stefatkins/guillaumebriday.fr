@@ -8,8 +8,7 @@ class AutoComplete extends Component {
   static propTypes = {
     hits: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentRefinement: PropTypes.string.isRequired,
-    refine: PropTypes.func.isRequired,
-    onSuggestionSelected: PropTypes.func.isRequired,
+    refine: PropTypes.func.isRequired
   }
 
   state = {
@@ -18,7 +17,13 @@ class AutoComplete extends Component {
 
   onChange = (event, { newValue }) => {
     this.setState({
-      value: newValue,
+      value: newValue
+    })
+  }
+
+  onSuggestionSelected = () => {
+    this.setState({
+      value: ''
     })
   }
 
@@ -31,11 +36,10 @@ class AutoComplete extends Component {
   }
 
   getSuggestionValue(hit) {
-    return hit.path
+    return hit.fields.slug
   }
 
   renderSuggestion(hit) {
-    console.log(hit)
     return <Link to={hit.fields.slug}>{hit.frontmatter.title}</Link>
   }
 
@@ -48,13 +52,13 @@ class AutoComplete extends Component {
   }
 
   render() {
-    const { hits, onSuggestionSelected } = this.props
+    const { hits } = this.props
     const { value } = this.state
 
     const inputProps = {
-      placeholder: 'Search for a product...',
+      placeholder: 'Rechercher...',
       onChange: this.onChange,
-      value,
+      value
     }
 
     return (
@@ -62,8 +66,8 @@ class AutoComplete extends Component {
         suggestions={hits}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        onSuggestionSelected={onSuggestionSelected}
         getSuggestionValue={this.getSuggestionValue}
+        onSuggestionSelected={this.onSuggestionSelected}
         renderSuggestion={this.renderSuggestion}
         inputProps={inputProps}
         renderSectionTitle={this.renderSectionTitle}

@@ -48,14 +48,15 @@ export default ({ isBlog }) => (
                   Photos
                 </Link>
 
-                <div className="inline border border-indigo rounded-full py-2 px-3 leading-tight">
+                <div className="flex items-baseline inline border border-indigo rounded-full py-2 px-3 leading-tight">
                   <InstantSearch indexName="blog" searchClient={searchClient}>
                     <Index indexName="blog">
-                      <Configure hitsPerPage={4} />
+                      <Configure hitsPerPage={5} />
                       <AutoComplete />
                     </Index>
-                    <FontAwesomeIcon icon="search" className="text-indigo" />
                   </InstantSearch>
+
+                  <FontAwesomeIcon icon="search" className="text-indigo" />
                 </div>
               </div>
             </div>
