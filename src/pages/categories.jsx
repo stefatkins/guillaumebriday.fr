@@ -10,31 +10,42 @@ export default ({
 }) => (
   <>
     <Helmet title={`Catégories | ${site.siteMetadata.title}`} />
-    <h1>Catégories</h1>
+
+    <h2 className="text-4xl">Catégories</h2>
+
+    <p className="font-light text-grey-darker text-sm">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, tenetur enim hic cum ex ad nemo quam placeat voluptas quod, soluta fugiat eum iste deserunt dolore consequatur culpa totam laborum.
+    </p>
 
     <ul className="list-reset mb-8">
       {group.map(category => (
         <React.Fragment key={category.fieldValue}>
-          <h3 className="my-4">{category.fieldValue}</h3>
+          <h2 className="inline bg-indigo-lightest text-indigo py-1 px-4 rounded-full text-xs font-semibold">{category.fieldValue}</h2>
 
           {category.edges.map(({ node: post }) => (
             <li
-              className="flex my-2"
+              className="mb-6"
               key={post.id}
               itemScope=""
               itemType="http://schema.org/BlogPosting"
             >
-              <time
-                className="w-1/3 md:w-1/6 flex-no-shrink text-right pr-3"
-                itemProp="datePublished"
-                content={post.fields.datePublished}
-              >
-                {post.fields.date}
-              </time>
 
-              <Link to={post.fields.slug}>
-                <span itemProp="name">{post.frontmatter.title}</span>
-              </Link>
+              <h2 className="font-semibold m-0">
+                <Link to={post.fields.slug} className="text-grey-darkest">
+                  <span itemProp="name">{post.frontmatter.title}</span>
+                </Link>
+              </h2>
+
+              <div className="text-grey-darker text-sm">
+                Le{' '}
+                <span
+                  itemProp="datePublished"
+                  className="font-light"
+                  content={post.fields.datePublished}
+                >
+                  {post.fields.date}
+                </span>
+              </div>
             </li>
           ))}
         </React.Fragment>
