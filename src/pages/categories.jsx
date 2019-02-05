@@ -11,7 +11,7 @@ export default ({
   <>
     <Helmet title={`Catégories | ${site.siteMetadata.title}`} />
 
-    <h2 className="text-4xl">Catégories</h2>
+    <h1 className="text-4xl">Catégories</h1>
 
     <p className="font-light text-grey-darker text-sm">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, tenetur enim hic cum ex ad nemo quam placeat voluptas quod, soluta fugiat eum iste deserunt dolore consequatur culpa totam laborum.

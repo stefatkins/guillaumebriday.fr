@@ -7,6 +7,7 @@ export default ({ data: { markdownRemark: page, site } }) => (
     <Helmet title={`${page.frontmatter.title} | ${site.siteMetadata.title}`} />
     <article>
       <h1>{page.frontmatter.title}</h1>
+
       <div
         className="post-content leading-loose"
         itemProp="articleBody"

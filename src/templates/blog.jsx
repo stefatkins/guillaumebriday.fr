@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import PostListing from '../components/PostListing'
 import Pagination from '../components/Pagination'
 import { graphql } from 'gatsby'
@@ -6,11 +7,14 @@ import { graphql } from 'gatsby'
 export default ({
   data: {
     allMarkdownRemark: { edges: posts },
+    site
   },
   pageContext,
 }) => (
   <>
-    <h2 className="text-4xl">Articles</h2>
+    <Helmet title={`Blog | ${site.siteMetadata.title}`} />
+
+    <h1 className="text-4xl">Articles</h1>
 
     <p className="font-light text-grey-darker text-sm">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis, tenetur enim hic cum ex ad nemo quam placeat voluptas quod, soluta fugiat eum iste deserunt dolore consequatur culpa totam laborum.

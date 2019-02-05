@@ -3,7 +3,8 @@ layout: page
 title: "À propos"
 ---
 
-## Pourquoi je fais ce blog ?
+# Pourquoi je fais ce blog ?
+
 J'ai beaucoup appris et je continue à le faire grâce à de nombreux blogs et je souhaite partager également ma passion, mes idées et explications. Je souhaite que ce blog soit un lieu de partage qui me permet d'apprendre et de transmettre !
 
 Je tiens à partager mes passions et transmettre ce que je trouve, je pense ou ce que j'apprends au quotidien.
