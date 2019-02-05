@@ -48,6 +48,10 @@ export default ({ isBlog }) => (
                   Photos
                 </Link>
 
+                <Link getProps={className} to="/mon-profil">
+                  Mon profil
+                </Link>
+
                 <div className="flex items-baseline inline border border-indigo rounded-full py-2 px-3 leading-tight">
                   <InstantSearch indexName="blog" searchClient={searchClient}>
                     <Index indexName="blog">

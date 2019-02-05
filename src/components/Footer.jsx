@@ -46,6 +46,9 @@ export default () => (
                   <Link className="footer-link relative text-grey hover:text-grey-lightest hover:no-underline w-1/3" to="/photos">Photos</Link>
                 </span>
 
+                <span className="w-1/3">
+                  <Link className="footer-link relative text-grey hover:text-grey-lightest hover:no-underline w-1/3" to="/mon-profil">Mon profil</Link>
+                </span>
               </div>
             </div>
 
