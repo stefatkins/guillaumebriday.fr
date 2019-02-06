@@ -16,8 +16,8 @@ export default () => (
     `}
     render={data => {
       return (
-        <div className="bg-black text-white px-3 py-6">
-          <footer className="container mx-auto max-w-xl ">
+        <footer className="bg-black text-white px-3 py-6">
+          <div className="container mx-auto max-w-xl ">
             <p className="m-0 text-lg">{data.site.siteMetadata.title}</p>
 
             <div className="flex flex-col md:flex-row justify-between py-4">
@@ -52,7 +52,7 @@ export default () => (
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-between items-baseline border-t pt-4">
+            <div className="flex flex-col sm:flex-row justify-between items-baseline border-t pt-4">
               <p className="m-0">2019</p>
 
               <ul className="list-reset flex justify-between w-1/2 md:w-1/4">
@@ -123,8 +123,8 @@ export default () => (
                 </li>
               </ul>
             </div>
-          </footer>
-        </div>
+          </div>
+        </footer>
       )
     }}
   />

@@ -27,7 +27,7 @@ const Layout = ({ children, location, pageContext }) => (
             {
               name: 'description',
               content: data.site.siteMetadata.description,
-            },
+            }
           ]}
         >
           <html lang="fr" />

@@ -56,7 +56,8 @@ class AutoComplete extends Component {
     const { value } = this.state
 
     const inputProps = {
-      placeholder: 'Rechercher...',
+      placeholder: 'Rechercher un article',
+      title: 'Rechercher un article',
       onChange: this.onChange,
       value
     }

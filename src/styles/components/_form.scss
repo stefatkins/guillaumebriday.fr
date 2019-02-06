@@ -13,10 +13,13 @@
   @apply .hidden;
 }
 
+.ais-InstantSearch__root {
+  @apply .flex-1 .w-64;
+}
+
 .react-autosuggest__container--open .react-autosuggest__suggestions-container {
-  @apply .block .rounded-lg .border .bg-white .absolute .overflow-hidden .shadow-md;
+  @apply .block .rounded-lg .border .bg-white .absolute .overflow-hidden .shadow-md .pin-x .w-full;
   top: 40px;
-  right: 0px;
   z-index: 2;
 }
 
@@ -25,7 +28,7 @@
 }
 
 .react-autosuggest__input {
-  @apply .appearance-none .py-1 .px-2 .text-grey-darker;
+  @apply .appearance-none .py-1 .px-2 .text-grey-darker .w-full;
 }
 
 .react-autosuggest__suggestions-list {
@@ -34,7 +37,6 @@
 
 .react-autosuggest__suggestion a {
   @apply .block .px-4 .py-3 .bg-white;
-  width: 500px;
 }
 
 .react-autosuggest__suggestion:not(:last-child) {
