@@ -25,36 +25,34 @@ export default () => (
                 {data.site.siteMetadata.description}
               </p>
 
-              <div className="flex-no-shrink flex flex-wrap md:w-1/3">
-                <span className="w-1/3">
+              <div className="flex-no-shrink flex flex-wrap md:w-1/3 mt-4 md:mt-0">
+                <span className="w-1/3 mb-2">
                   <Link className="footer-link relative text-grey hover:text-grey-lightest hover:no-underline" to="/">Home</Link>
                 </span>
 
-                <span className="w-1/3">
+                <span className="w-1/3 mb-2">
                   <Link className="footer-link relative text-grey hover:text-grey-lightest hover:no-underline w-1/3" to="/a-propos">A propos</Link>
                 </span>
 
-                <span className="w-1/3">
+                <span className="w-1/3 mb-2">
                   <Link className="footer-link relative text-grey hover:text-grey-lightest hover:no-underline w-1/3" to="/blog">Blog</Link>
                 </span>
 
-                <span className="w-1/3">
+                <span className="w-1/3 mb-2">
                   <Link className="footer-link relative text-grey hover:text-grey-lightest hover:no-underline w-1/3" to="/categories">Catégories</Link>
                 </span>
 
-                <span className="w-1/3">
+                <span className="w-1/3 mb-2">
                   <Link className="footer-link relative text-grey hover:text-grey-lightest hover:no-underline w-1/3" to="/photos">Photos</Link>
                 </span>
 
-                <span className="w-1/3">
+                <span className="w-1/3 mb-2">
                   <Link className="footer-link relative text-grey hover:text-grey-lightest hover:no-underline w-1/3" to="/mon-profil">Mon profil</Link>
                 </span>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between items-baseline border-t pt-4">
-              <p className="m-0">2019</p>
-
+            <div className="flex justify-end items-baseline border-t pt-4">
               <ul className="list-reset flex justify-between w-1/2 md:w-1/4">
                 <li>
                   <a className="text-grey hover:text-grey-lightest" href="/rss.xml" title="RSS">

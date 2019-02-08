@@ -20,7 +20,7 @@ export default ({ isBlog }) => (
     `}
     render={() => {
       const activeClassName = isActive => {
-        let classes = 'header-link flex-no-shrink hover:no-underline hover:text-indigo relative mr-4 font-semibold sm:text-base md:text-lg'
+        let classes = 'header-link flex-no-shrink hover:no-underline hover:text-indigo relative mr-4 my-2 md:my-0 font-semibold sm:text-base md:text-lg'
         let activeClasses = isActive
           ? 'active text-indigo'
           : 'text-grey-darker'
@@ -34,7 +34,7 @@ export default ({ isBlog }) => (
       return (
         <header className="container mx-auto max-w-2xl px-3">
           <nav className="my-8 text-grey border-b-2">
-            <div className="-my-2px py-4 flex flex-col md:flex-row justify-between">
+            <div className="-my-2px py-4 flex flex-col md:flex-row justify-between items-baseline">
               <Link className="mr-4 text-2xl text-grey-darker" to="/">
                 Guillaume <span className="font-extrabold text-black">BRIDAY</span>
               </Link>
@@ -52,7 +52,7 @@ export default ({ isBlog }) => (
                   Mon profil
                 </Link>
 
-                <div className="flex items-baseline inline border border-indigo rounded-full py-2 px-3 leading-tight w-full">
+                <div className="flex items-baseline inline border border-indigo rounded-full mt-2 md:mt-0 py-2 px-3 leading-tight w-full">
                   <InstantSearch indexName="blog" searchClient={searchClient}>
                     <Index indexName="blog">
                       <Configure hitsPerPage={5} />
