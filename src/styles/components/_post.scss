@@ -5,64 +5,63 @@
   h4,
   h5,
   h6 {
-    @apply .mt-10;
+    @apply mt-10;
   }
 
   a {
-    @apply .text-black .font-semibold;
+    @apply text-black font-semibold;
     background-image: linear-gradient(180deg, transparent 70%, config('colors.indigo-lightest') 0);
 
     &:hover {
       background-image: linear-gradient(180deg, transparent 0%, config('colors.indigo-lightest') 0);
-      @apply .no-underline;
+      @apply no-underline;
     }
   }
 
   img {
-    @apply .max-w-full;
+    @apply max-w-full;
   }
 }
 
 .gatsby-resp-image-wrapper + em {
-  @apply .block .mt-2 .italic .text-grey-darker .text-center;
+  @apply block mt-2 italic text-grey-darker text-center;
 }
 
 table {
-  @apply .w-full .mb-4 .border;
+  @apply w-full mb-4 border;
 
   border-collapse: collapse;
 
   td,
   th {
-    @apply .align-top .border .p-1;
+    @apply align-top border p-1;
   }
 
   thead {
     th {
-      @apply .border-b-2 .align-bottom .text-left;
+      @apply border-b-2 align-bottom text-left;
     }
   }
 
   tbody {
     tr:nth-of-type(odd) {
-      @apply .bg-grey-lighter;
+      @apply bg-grey-lighter;
     }
   }
 }
 
-
 kbd {
-  @apply .text-white .rounded .text-sm .py-1 .px-2 .bg-black;
+  @apply text-white rounded text-sm py-1 px-2 bg-black;
 }
 
 p > code {
-  @apply .p-2px .text-orange .bg-orange-lightest .rounded;
+  @apply p-2px text-orange bg-orange-lightest rounded;
 }
 
 pre {
-  @apply .my-4 .overflow-x-scroll .py-2 .px-4;
+  @apply my-4 overflow-x-scroll py-2 px-4;
 
   & > code {
-    @apply .px-0 .border-none;
+    @apply px-0 border-none;
   }
 }
