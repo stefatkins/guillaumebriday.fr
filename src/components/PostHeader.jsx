@@ -13,8 +13,8 @@ export default ({ post, allCommentsYaml }) => {
         {post.frontmatter.title}
       </h1>
 
-      <ul className="list-reset mb-4 text-sm">
-        <li className="block sm:inline-block mr-3 text-grey-darker">
+      <ul className="list-reset mb-4 text-sm text-indigo">
+        <li className="block sm:inline-block mr-3">
           <time
             dateTime={post.fields.datePublished}
             itemProp="datePublished"
@@ -24,18 +24,18 @@ export default ({ post, allCommentsYaml }) => {
           </time>
         </li>
 
-        <li className="block sm:inline-block mr-3 text-grey-darker">
+        <li className="block sm:inline-block mr-3 border-l border-indigo pl-3">
           <FontAwesomeIcon icon="user" /> Par
           <span itemProp="author" itemScope itemType="http://schema.org/Person">
             <span itemProp="name"> Guillaume Briday</span>
           </span>
         </li>
 
-        <li className="block sm:inline-block mr-3 text-grey-darker">
+        <li className="block sm:inline-block mr-3 border-l border-indigo pl-3">
           <FontAwesomeIcon icon="comments" /> {comments.length} commentaire{comments.length > 1 ? 's' : ''}
         </li>
 
-        <li className="block sm:inline-block mr-3 text-grey-darker">
+        <li className="block sm:inline-block mr-3 border-l border-indigo pl-3">
           <FontAwesomeIcon icon="clock" /> {formatReadingTime(post.timeToRead)}
         </li>
       </ul>

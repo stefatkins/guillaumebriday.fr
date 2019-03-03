@@ -13,7 +13,7 @@ export default ({ pageContext: { previous, next } }) => (
             </span>
           </div>
 
-          <Link to={previous.fields.slug} rel="prev"  className="font-semibold text-xl">
+          <Link to={previous.fields.slug} rel="prev"  className="font-semibold text-2xl text-grey-darkest">
             {previous.frontmatter.title}
           </Link>
         </>
@@ -29,7 +29,7 @@ export default ({ pageContext: { previous, next } }) => (
             </span>
           </div>
 
-          <Link to={next.fields.slug} rel="next" className="font-semibold text-xl">
+          <Link to={next.fields.slug} rel="next" className="font-semibold text-2xl text-grey-darkest">
             {next.frontmatter.title}
           </Link>
         </>
