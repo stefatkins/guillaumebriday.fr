@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import Gallery from '../components/Gallery'
 
 export default ({
   data: {
@@ -19,9 +19,14 @@ export default ({
     </p>
 
     <div className="md:overflow-x-scroll md:whitespace-no-wrap">
-      {allFile.edges.map(({ node }) => (
-        <Img key={node.id} fluid={node.childImageSharp.fluid} className="mb-4" />
-      ))}
+      <Gallery
+        images={allFile.edges.map(({ node: { childImageSharp: { fluid, fluid: { srcSet }, original: { src }}}}) => ({
+          src,
+          srcSet,
+          fluid
+        }))}
+
+      />
     </div>
   </>
 )
@@ -43,7 +48,11 @@ export const pageQuery = graphql`
         node {
           id
           childImageSharp {
+            original {
+              src
+            }
             fluid(maxWidth: 800) {
+              srcSet
               ...GatsbyImageSharpFluid_withWebp
             }
           }
