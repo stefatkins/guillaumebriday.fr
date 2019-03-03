@@ -25,7 +25,6 @@ export default ({
           srcSet,
           fluid
         }))}
-
       />
     </div>
   </>
