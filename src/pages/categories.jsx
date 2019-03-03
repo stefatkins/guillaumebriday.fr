@@ -20,7 +20,9 @@ export default ({
     <ul className="list-reset mb-8">
       {group.map(category => (
         <React.Fragment key={category.fieldValue}>
-          <h2 className="inline bg-indigo-lightest text-indigo py-1 px-4 rounded-full text-xs font-semibold">{category.fieldValue}</h2>
+          <div className="mt-12 mb-2">
+            <h2 className="inline bg-indigo-lightest text-indigo py-1 px-4 rounded-full text-xs font-semibold">{category.fieldValue}</h2>
+          </div>
 
           {category.edges.map(({ node: post }) => (
             <li
